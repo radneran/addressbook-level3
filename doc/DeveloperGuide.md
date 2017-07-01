@@ -45,6 +45,8 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | add a new person |
 `* * *` | user | delete a person | remove entries that I no longer need
 `* * *` | user | find a person by name | locate details of persons without having to go through the entire list
+`* * *` | user | edit a person | update information about the person when there are changes
+`* *` | user | add tags to a person | add more information about the person and organise the addressbook more effectively
 `* *` | user | hide [private contact details](#private-contact-detail) by default | minimize chance of someone else seeing them by accident
 `*` | user with many persons in the address book | sort persons by name | locate a person easily
 
@@ -53,7 +55,7 @@ Priority | As a ... | I want to ... | So that I can...
 
 (For all use cases below, the **System** is the `AddressBook` and the **Actor** is the `user`, unless specified otherwise)
 
-#### Use case: Delete person
+### Use case: Delete person
 
 **MSS**
 
@@ -74,12 +76,30 @@ Use case ends.
 > 3a1. AddressBook shows an error message <br>
   Use case resumes at step 2
 
+### Use case: Rename tag
+
+**MSS**
+
+1. User requests to rename tag friends to buddies
+2. AddressBook prompts the user to confirm the action
+3. Upon confirmation, AddressBook will rename the tag and show a success message to the user <br>
+Use case ends.
+
+**Extensions**
+
+1a. The tag friends does not exist
+
+> 1a1. AddressBook displays an error message <br>
+  Use case ends
+
+
 ## Appendix C : Non Functional Requirements
 
 1. Should work on any [mainstream OS](#mainstream-os) as long as it has Java 8 or higher installed.
 2. Should be able to hold up to 1000 persons.
 3. Should come with automated unit tests and open source code.
 4. Should favor DOS style commands over Unix-style commands.
+5. Should not require installing
 
 ## Appendix D : Glossary
 
